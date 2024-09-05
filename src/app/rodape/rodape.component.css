@@ -1,7 +1,13 @@
-footer{
+footer
+{
+    display: flex;
+    position: fixed;
+    bottom: 0;
     background: black;
     color: white;
+    justify-content: center;
     text-align: center;
     height: 100px;
+    width: 100%;
     padding-top: 30px;
 }
