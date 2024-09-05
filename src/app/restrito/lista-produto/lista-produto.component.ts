@@ -11,10 +11,7 @@ import { ProdutoService } from 'src/app/produto.service';
 export class ListaProdutoComponent implements OnInit{
   public produtos: Produto[] = [];
 
-  constructor(private _produtoService:ProdutoService, private _router: Router)
-  {
-
-  }
+  constructor(private _produtoService:ProdutoService, private _router: Router) {}
 
   ngOnInit(): void {
     this.listarProdutos();
@@ -49,5 +46,7 @@ export class ListaProdutoComponent implements OnInit{
         alert("Erro ao Excluir")
       }
     );
+
+    this._router.navigate(["/restrito/lista"]);
   }
 }

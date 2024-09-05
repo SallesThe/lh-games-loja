@@ -25,6 +25,7 @@ import { ListaProdutoComponent } from './restrito/lista-produto/lista-produto.co
 import { MenuProdutoComponent } from './restrito/menu-produto/menu-produto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuRestritoComponent } from './restrito/menu-restrito/menu-restrito.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroProdutoComponent,
     ListaProdutoComponent,
     MenuProdutoComponent,
+    MenuRestritoComponent,
   ],
   imports: [
     BrowserModule,

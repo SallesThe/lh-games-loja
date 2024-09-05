@@ -1,1 +1,20 @@
-<p>cadastro-produto works!</p>
+<main>
+    <h1>Cadastrar Jogo</h1>
+    <section id="section-cadastro">
+        <form>
+            <label for="produto">Nome do Produto</label>
+            <input type="text" name="produto" class="form-control" [(ngModel)]="produto.produto">
+            <br>
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" class="form-control" [(ngModel)]="produto.descricao">
+            <br>
+            <label for="foto">Foto</label>
+            <input type="text" name="foto" class="form-control" [(ngModel)]="produto.foto">
+            <br>
+            <label for="preco">Preço</label>
+            <input type="number" name="preco" class="form-control" [(ngModel)]="produto.preco">
+            <button type="button" class="btn btn-primary mb-3 button" (click)="cadastrar()">Cadastrar</button>
+
+        </form>
+    </section>
+</main>

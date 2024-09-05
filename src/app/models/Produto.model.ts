@@ -6,7 +6,7 @@ export class Produto
     foto: string = ""; 
     preco: number = 0;
     
-    constructor(id: number, produto: string, descricao: string, foto: string, preco: number)
+    constructor(id: number = 0, produto: string = "", descricao: string = "", foto: string = "", preco: number = 0)
     {
         this.id = id;
         this.produto = produto;

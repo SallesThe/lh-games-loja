@@ -25,7 +25,7 @@ export class ProdutoService {
     return this._httpClient.get<Produto[]>(this.url);
   }
 
-  cadastrarProduto(produto:Produto[]): Observable<Produto[]> 
+  cadastrarProduto(produto:Produto): Observable<Produto[]> 
   {
     return this._httpClient.post<Produto[]>(this.url, produto);
   }
