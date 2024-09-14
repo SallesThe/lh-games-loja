@@ -19,7 +19,7 @@ export class LoginService {
     }
   }
 
-  setMostraMenu(valor: boolean) 
+  setMostraMenu(valor: boolean): void 
   {
     this.mostraMenu.next(valor);
   }

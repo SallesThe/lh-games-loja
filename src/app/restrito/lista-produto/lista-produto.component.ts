@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login.service';
 import { Produto } from 'src/app/models/Produto.model';
 import { ProdutoService } from 'src/app/produto.service';
 
@@ -11,10 +12,11 @@ import { ProdutoService } from 'src/app/produto.service';
 export class ListaProdutoComponent implements OnInit{
   public produtos: Produto[] = [];
 
-  constructor(private _produtoService:ProdutoService, private _router: Router) {}
+  constructor(private _produtoService:ProdutoService, private _router: Router, private _loginService: LoginService) {}
 
   ngOnInit(): void {
     this.listarProdutos();
+    this._loginService.setMostraMenu(false);
   }
 
   listarProdutos(): void
@@ -39,10 +41,10 @@ export class ListaProdutoComponent implements OnInit{
   excluir(id: number)
   {
     this._produtoService.removerProduto(id).subscribe(
-      produto => {
+      (produto) => {
         this.listarProdutos();
       },
-      err => {
+      (err) => {
         alert("Erro ao Excluir")
       }
     );

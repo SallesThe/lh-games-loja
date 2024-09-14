@@ -30,15 +30,15 @@ export class ProdutoService {
     return this._httpClient.post<Produto[]>(this.url, produto);
   }
 
-  atualizarProduto(id: any, produto:Produto): Observable<Produto[]>
+  atualizarProduto(id: any, produto: Produto): Observable<Produto[]>
   {
-    const urlAtualizar = `${this.url}?${id}`;
-    return this._httpClient.put<Produto[]>(urlAtualizar, Produto);
+    const urlAtualizar = `${this.url}/${id}`;
+    return this._httpClient.put<Produto[]>(urlAtualizar, produto);
   }
 
   removerProduto(id: any): Observable<Produto[]>
   {
-    const urlDeletar = `${this.url}/?${id}`;
+    const urlDeletar = `${this.url}/${id}`;
     return this._httpClient.delete<Produto[]>(urlDeletar);
   }
 }

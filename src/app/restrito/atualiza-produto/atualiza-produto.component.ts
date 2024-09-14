@@ -9,12 +9,13 @@ import { ProdutoService } from 'src/app/produto.service';
   styleUrls: ['./atualiza-produto.component.css'],
 })
 export class AtualizaProdutoComponent implements OnInit {
+  
   public produtoId: number = 0;
   public produto: Produto = new Produto();
 
-  constructor(private _produtoService: ProdutoService, private _router: Router, private _acttivatedRoute: ActivatedRoute) 
+  constructor(private _produtoService: ProdutoService, private _router: Router, private _activatedRoute: ActivatedRoute) 
   {
-    this._acttivatedRoute.params.subscribe(
+    this._activatedRoute.params.subscribe(
       params => this.produtoId = params['id']
     );
   }
@@ -41,12 +42,12 @@ export class AtualizaProdutoComponent implements OnInit {
   atualizar(id: number)
   {
     this._produtoService.atualizarProduto(id, this.produto).subscribe(
-      produto => {
+      (produto) => {
         this.produto = new Produto(); 
       },
-      err => {
+      (err) => {
         alert("Erro ao Atualizar");
-      }
+      }      
     );
 
     this._router.navigate(["restrito/lista"]);

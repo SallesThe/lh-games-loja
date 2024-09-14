@@ -10,7 +10,7 @@ import { ProdutoService } from '../produto.service';
 export class InicioComponent implements OnInit {
   public produtos: Produto[] = [];
 
-  constructor(private _produtoService:ProdutoService)
+  constructor(private _produtoService: ProdutoService)
   {
 
   }

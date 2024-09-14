@@ -9,7 +9,7 @@ import { ProdutoService } from 'src/app/produto.service';
   styleUrls: ['./cadastro-produto.component.css'],
 })
 export class CadastroProdutoComponent {
-  public produto: Produto = new Produto(0, '', '', '', 0);
+  public produto: Produto = new Produto();
 
   constructor(
     private _produtoService: ProdutoService,
@@ -20,7 +20,7 @@ export class CadastroProdutoComponent {
   {
     this._produtoService.cadastrarProduto(this.produto).subscribe(
       produto => {
-        this.produto = new Produto(0, "", "", "", 0);
+        this.produto = new Produto();
         alert("Cadastrado com sucesso!");
       },
       err => {
